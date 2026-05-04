@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Диана ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #ffe6f0 0%, #ffcce0 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 70px;
+            padding: 40px 25px;
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #b33b6e;
+            margin-bottom: 20px;
+        }
+
+        .heart {
+            font-size: 130px;
+            cursor: pointer;
+            display: inline-block;
+            transition: transform 0.2s;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+        }
+
+        .heart:active {
+            transform: scale(0.92);
+        }
+
+        /* Анимация вращения */
+        .spin-heart {
+            animation: spin 1.2s ease-in-out forwards;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        /* Скрытый блок с фотографиями */
+        .hidden-cats {
+            display: none;
+            margin-top: 35px;
+            background: #ffffffb3;
+            border-radius: 60px;
+            padding: 25px 15px;
+        }
+
+        .photo-item {
+            background: white;
+            border-radius: 50px;
+            padding: 20px 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+            transition: 0.2s;
+        }
+
+        .photo-item img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 40px;
+            margin: 10px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .photo-item p {
+            font-size: 1.2rem;
+            color: #b33b6e;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .big-heart {
+            font-size: 3rem;
+            color: #ff3366;
+        }
+
+        .footer-text {
+            margin-top: 25px;
+            font-size: 1rem;
+            color: #a15175;
+            font-style: italic;
+        }
+
+        /* Адаптация под телефон */
+        @media (max-width: 500px) {
+            .card { padding: 30px 15px; }
+            h1 { font-size: 2.2rem; }
+            .heart { font-size: 90px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Диана, ты лучшая! ❤️</h1>
+    <div class="heart" id="clickHeart">❤️</div>
+    <div class="footer-text">нажми на сердечко</div>
+
+    <!-- Блок с фотографиями, который появится после клика -->
+    <div id="catsBlock" class="hidden-cats">
+        <!-- Первая фотография -->
+        <div class="photo-item">
+            <img src="put_filename_1.jpg" alt="Фото 1">
+            <p>я знаю, что ты бы хотела здесь оказаться))))</p>
+        </div>
+        <!-- Вторая фотография -->
+        <div class="photo-item">
+            <img src="put_filename_2.jpg" alt="Фото 2">
+            <p>мечта!</p>
+        </div>
+        <!-- Третья фотография -->
+        <div class="photo-item">
+            <img src="put_filename_3.jpg" alt="Фото 3">
+            <p class="big-heart">♥️</p>
+        </div>
+        <div class="footer-text" style="margin-top: 5px;">
+            💕 ты классная, Диан 💕
+        </div>
+    </div>
+</div>
+
+<script>
+    const heart = document.getElementById('clickHeart');
+    const catsDiv = document.getElementById('catsBlock');
+    let isClicked = false;
+
+    heart.addEventListener('click', function() {
+        if (!isClicked) {
+            heart.classList.add('spin-heart');
+            catsDiv.style.display = 'block';
+            isClicked = true;
+            setTimeout(() => {
+                heart.classList.remove('spin-heart');
+            }, 1200);
+        }
+    });
+</script>
+
+</body>
+</html>
