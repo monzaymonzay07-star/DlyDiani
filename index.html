@@ -3,41 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Диана ❤️</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             min-height: 100vh;
             background: linear-gradient(145deg, #ffe6f0 0%, #ffcce0 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 8px; /* Убрал отступы по краям */
+            padding: 8px;
         }
-
         .card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(8px);
             border-radius: 50px;
-            padding: 20px 15px; /* Уменьшил внутренние отступы */
-            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+            padding: 20px 15px;
+            box-shadow: 0 25px 40px rgba(0,0,0,0.15);
             max-width: 550px;
             width: 100%;
         }
-
-        h1 {
-            font-size: 2.2rem; /* Увеличил заголовок */
-            color: #b33b6e;
-            margin-bottom: 15px;
-        }
-
+        h1 { font-size: 2.2rem; color: #b33b6e; margin-bottom: 15px; }
         .heart {
             font-size: 120px;
             cursor: pointer;
@@ -45,70 +33,35 @@
             transition: transform 0.2s;
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
         }
-
-        .heart:active {
-            transform: scale(0.92);
-        }
-
-        .spin-heart {
-            animation: spin 1.2s ease-in-out forwards;
-        }
-
+        .heart:active { transform: scale(0.92); }
+        .spin-heart { animation: spin 1s ease-in-out forwards; }
         @keyframes spin {
             0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.2); }
+            50% { transform: rotate(180deg) scale(1.1); }
             100% { transform: rotate(360deg) scale(1); }
         }
-
-        .hidden-cats {
-            display: none;
-            margin-top: 25px;
-            background: #ffffffb3;
-            border-radius: 50px;
-            padding: 20px 12px;
-        }
-
-        .photo-item {
+        .hidden-cats { display: none; margin-top: 25px; background: #ffffffb3; border-radius: 50px; padding: 20px 12px; }
+        .photo-item { background: white; border-radius: 45px; padding: 15px 12px; margin-bottom: 18px; }
+        .photo-item img { width: 100%; max-width: 320px; border-radius: 35px; margin: 8px 0; }
+        .photo-item p { font-size: 1.2rem; color: #b33b6e; font-weight: 600; margin-top: 8px; }
+        .big-heart { font-size: 3rem; color: #ff3366; }
+        .footer-text { margin-top: 20px; font-size: 1rem; color: #a15175; font-style: italic; }
+        .video-container {
             background: white;
             border-radius: 45px;
-            padding: 15px 12px;
-            margin-bottom: 18px;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+            padding: 20px 12px;
+            margin-top: 20px;
         }
-
-        .photo-item img {
+        video {
             width: 100%;
             max-width: 320px;
             border-radius: 35px;
-            margin: 8px 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            outline: none;
         }
-
-        .photo-item p {
-            font-size: 1.2rem;
-            color: #b33b6e;
-            font-weight: 600;
-            margin-top: 8px;
-        }
-
-        .big-heart {
-            font-size: 3rem;
-            color: #ff3366;
-        }
-
-        .footer-text {
-            margin-top: 20px;
-            font-size: 1rem;
-            color: #a15175;
-            font-style: italic;
-        }
-
         @media (max-width: 500px) {
             .card { padding: 15px 10px; }
-            h1 { font-size: 1.9rem; }
+            h1 { font-size: 1.8rem; }
             .heart { font-size: 90px; }
-            .photo-item img { max-width: 260px; }
-            .photo-item p { font-size: 1rem; }
         }
     </style>
 </head>
@@ -120,21 +73,27 @@
     <div class="footer-text">нажми на сердечко</div>
 
     <div id="catsBlock" class="hidden-cats">
-        <!-- 1 фото: я знаю, что ты бы хотела здесь оказаться -->
+        <!-- Фотографии -->
         <div class="photo-item">
             <img src="IMG_2986.jpeg" alt="Фото 1">
             <p>я знаю, что ты бы хотела здесь оказаться))))</p>
         </div>
-        <!-- 2 фото: мечта (два котика) -->
         <div class="photo-item">
             <img src="IMG_2987.jpeg" alt="Фото 2">
             <p>мечта!</p>
         </div>
-        <!-- 3 фото: маленький котик с сердечком -->
         <div class="photo-item">
             <img src="IMG_2985.jpeg" alt="Фото 3">
             <p class="big-heart">♥️</p>
         </div>
+        
+        <!-- ТВОЁ ВИДЕО -->
+        <div class="video-container">
+            <video controls src="video.mp4"></video>
+            <p style="margin-top: 10px; font-size: 1rem; color: #b33b6e;">📽️ Это я для тебя, посмотри</p>
+        </div>
+        <!-- КОНЕЦ БЛОКА ВИДЕО -->
+
         <div class="footer-text" style="margin-top: 5px;">
             💕 ты классная, Диан 💕
         </div>
@@ -153,7 +112,7 @@
             isClicked = true;
             setTimeout(() => {
                 heart.classList.remove('spin-heart');
-            }, 1200);
+            }, 1000);
         }
     });
 </script>
