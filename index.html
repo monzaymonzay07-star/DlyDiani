@@ -36,9 +36,8 @@
         .heart:active { transform: scale(0.92); }
         .spin-heart { animation: spin 1s ease-in-out forwards; }
         @keyframes spin {
-            0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.1); }
-            100% { transform: rotate(360deg) scale(1); }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         .hidden-cats { display: none; margin-top: 25px; background: #ffffffb3; border-radius: 50px; padding: 20px 12px; }
         .photo-item { background: white; border-radius: 45px; padding: 15px 12px; margin-bottom: 18px; }
@@ -54,9 +53,10 @@
         }
         video {
             width: 100%;
-            max-width: 320px;
+            max-width: 100%;
             border-radius: 35px;
             outline: none;
+            max-height: 400px;
         }
         @media (max-width: 500px) {
             .card { padding: 15px 10px; }
@@ -73,7 +73,6 @@
     <div class="footer-text">нажми на сердечко</div>
 
     <div id="catsBlock" class="hidden-cats">
-        <!-- Фотографии -->
         <div class="photo-item">
             <img src="IMG_2986.jpeg" alt="Фото 1">
             <p>я знаю, что ты бы хотела здесь оказаться))))</p>
@@ -87,12 +86,10 @@
             <p class="big-heart">♥️</p>
         </div>
         
-        <!-- ТВОЁ ВИДЕО -->
         <div class="video-container">
-            <video controls src="video.mp4"></video>
+            <video controls src="v14044g50000d7sh0a7og65nff1kogt0.mov"></video>
             <p style="margin-top: 10px; font-size: 1rem; color: #b33b6e;">📽️ Это я для тебя, посмотри</p>
         </div>
-        <!-- КОНЕЦ БЛОКА ВИДЕО -->
 
         <div class="footer-text" style="margin-top: 5px;">
             💕 ты классная, Диан 💕
